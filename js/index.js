@@ -162,7 +162,7 @@ const defaultGameState={
     }
 }
 
-// obtiene referencias a los elementos del DOM para mostrar la información del juego
+// se obtienen referencias a los elementos del DOM para mostrar la información del juego
 let heroDiv = document.getElementById("heroDiv");
 let salaDiv = document.getElementById("salaDiv");
 let enemigoDin = document.getElementById("enemigoDiv");
