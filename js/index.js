@@ -20,7 +20,7 @@ const defaultGameState={
                 monsterProb: 0.0, // probabilidad de encontrar un monstruo
                 isShop: false, // boleano que dice si la sala es una tienda
                 name: "Entrada principal", // nombre de la sala
-                description: "", // descripción de la sala
+                description: "Majestuoso vestíbulo de techos altos bañado en penumbra azulada. Calabazas iluminadas y una gárgola de piedra decoran la entrada, mientras retratos colgantes custodian la gran escalera del fondo.", // descripción de la sala
                 north: null, // ID de la sala contigua en esa dirección
                 south: null, // ID de la sala contigua en esa dirección
                 west: null,
@@ -171,14 +171,17 @@ let enemigoDin = document.getElementById("enemigoDiv");
 function mostrarHeroe(){
     let hero = defaultGameState.player;
 
+    // se muestran los datos en el html
     heroDiv.innerHTML = `
         <h2>${hero.name}</h2>
         <p>Salud: ${hero.health}</p>
         <p>Fuerza: ${hero.strength}</p>
         <p>Defensa: ${hero.defense}</p>
+        <p>Bonificación de fuerza: ${hero.strengthBonus}</p>
+        <p>Bonificación de defensa: ${hero.defenseBonus}</p>
         <p>Cuarto actual: ${hero.currentRoom}</p>
         <p>Oro: ${hero.gold}</p>
-        <p>Posiones: ${hero.potions}</p>
+        <p>Pociones: ${hero.potions}</p>
     `
 }
 
@@ -196,7 +199,7 @@ function mostrarSala(){
         <p>ID: ${randomRoom.id}</p>
         <p>Probabilidad de enemigo: ${randomRoom.monsterProb}</p>
         <p>Tienda: ${randomRoom.isShop}</p>
-        <p>${randomRoom.description}</p>
+        <p>Descripción: ${randomRoom.description}</p>
         <p>Norte: ${randomRoom.north}</p>
         <p>Sur: ${randomRoom.south}</p>
         <p>Este: ${randomRoom.east}</p>
@@ -216,6 +219,7 @@ function mostrarEnemigo(){
     enemigoDiv.innerHTML = `
         <img src="${randomEnemy.img}" alt="${randomEnemy.name}">
         <h2>${randomEnemy.name}</h2>
+        <p>¿Es jefe?: ${randomEnemy.isBoss ? 'Sí' : 'No'}</p>
         <p>Salud: ${randomEnemy.health}</p>
         <p>Fuerza: ${randomEnemy.strength}</p>
         <p>Defensa: ${randomEnemy.defence}</p>
